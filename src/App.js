@@ -1,10 +1,9 @@
-import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
+import { RouterComponents } from './components/router/RouterComponent';
 
 const App = () => {
   return (
-    <div className="App">
-      <PrimaryButton>テスト</PrimaryButton>
-      <PrimaryButton>検索</PrimaryButton>
+    <div className="">
+      <RouterComponents />
     </div>
   );
 };
