@@ -1,5 +1,16 @@
-export const UserIconWithName = (props) => {
+import React, { memo } from 'react';
+import { useRecoilValue } from 'recoil';
+import { userState } from '../../../store/userState';
+
+export const UserIconWithName = memo((props) => {
+  console.log('UserIconWithName');
   const { image, name } = props;
+
+  // const { userInfo } = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
+
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+
   return (
     <div className="text-center ">
       <img
@@ -9,7 +20,12 @@ export const UserIconWithName = (props) => {
         src={image}
         alt={name}
       />
-      <p className="pb-2 pt-2 font-bold text-lg text-gray-700">{name}</p>
+      <div className="pb-2 pt-2 font-bold text-lg text-gray-700">
+        {name}
+        {isAdmin && (
+          <p className="underline text-gray-500 cursor-pointer">編集</p>
+        )}
+      </div>
     </div>
   );
-};
+});

@@ -1,7 +1,9 @@
+import { memo } from 'react';
 import { Card } from '../atoms/card/Card';
 import { UserIconWithName } from '../molecules/user/UserIconWithName';
 
-export const UserCard = (props) => {
+export const UserCard = memo((props) => {
+  console.log('UserCard');
   const { user } = props;
   return (
     <Card>
@@ -28,4 +30,4 @@ export const UserCard = (props) => {
       </div>
     </Card>
   );
-};
+});

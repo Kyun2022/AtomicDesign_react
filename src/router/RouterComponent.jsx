@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Top } from '../Pages/Top';
-import { Users } from '../Pages/Users';
-import { DefaultLayout } from '../template/DefaultLayout';
-import { HeaderOnly } from '../template/HeaderOnly';
+import { Top } from '../components/Pages/Top';
+import { Users } from '../components/Pages/Users';
+import { DefaultLayout } from '../components/template/DefaultLayout';
+import { HeaderOnly } from '../components/template/HeaderOnly';
 
-export const RouterComponents = () => {
+export const RouterComponent = () => {
   return (
     <BrowserRouter>
       <Routes>

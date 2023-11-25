@@ -1,10 +1,15 @@
-import { RouterComponents } from './components/router/RouterComponent';
+import { UserProvider } from './provider/UserProvider';
+import React from 'react';
+import { RouterComponent } from './router/RouterComponent';
+import { RecoilRoot } from 'recoil';
 
 const App = () => {
   return (
-    <div className="">
-      <RouterComponents />
-    </div>
+    <RecoilRoot>
+      <UserProvider>
+        <RouterComponent />
+      </UserProvider>
+    </RecoilRoot>
   );
 };
 
